@@ -36,7 +36,7 @@ class model_year
         return $stmt;
     }
 	
-	public function test_() 
+	public function test_() {
         //$this->db_conn();
         $sql = "SELECT YEAR(MAX(key_date)) as y_m_date FROM "
                 . "ticket ORDER BY key_date ASC";
