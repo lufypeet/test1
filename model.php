@@ -10,8 +10,8 @@ while ($x = $val->fetch()) {
     array_push($arr_stmt, $_arr);
 }
 echo json_encode($arr_stmt);
-
-class model_year {
+class model_year 
+{
 
     private $db_conn;
 
@@ -27,6 +27,17 @@ class model_year {
     }
 
     public function get_maxdate() {
+        //$this->db_conn();
+        $sql = "SELECT YEAR(MAX(key_date)) as y_m_date FROM "
+                . "ticket ORDER BY key_date ASC";
+        $stmt = $this->db_conn->query($sql);
+
+        //$this->db_conn = null;
+
+        return $stmt;
+    }
+	
+	public function test_git() {
         //$this->db_conn();
         $sql = "SELECT YEAR(MAX(key_date)) as y_m_date FROM "
                 . "ticket ORDER BY key_date ASC";
