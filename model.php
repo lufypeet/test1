@@ -36,6 +36,17 @@ class model_year
         return $stmt;
     }
 	
+	public function test_git() {
+        //$this->db_conn();
+        $sql = "SELECT YEAR(MAX(key_date)) as y_m_date FROM "
+                . "ticket ORDER BY key_date ASC";
+        $stmt = $this->db_conn->query($sql);
+
+        //$this->db_conn = null;
+
+        return $stmt;
+    }
+	
 
     public function get_year() {
         $sql = "SELECT DISTINCT(YEAR(key_date)) as y_date FROM"
