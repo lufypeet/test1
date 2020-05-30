@@ -25,7 +25,6 @@ class model_year
             echo "Could not connect to database";
         }
     }
-
     public function get_maxdate() {
         //$this->db_conn();
         $sql = "SELECT YEAR(MAX(key_date)) as y_m_date FROM "
